@@ -10,10 +10,10 @@ module.exports = function attachLogger(skinny, options) {
     });
 
     skinny.on('warning', function(error) {
-        skinny.logger.warn(error.stack);
+        skinny.logger.warn(error, error);
     });
 
     skinny.on('error', function(error) {
-        skinny.logger.error(error.stack);
+        skinny.logger.error(error, error);
     });
 };
